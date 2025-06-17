@@ -3,7 +3,7 @@ import portfolio from '../assets/projects/portfolio.png'
 
 const ProjectCard = () => {
   return (
-    <div className='relative w-[85%] h-[60%] rounded-xl shadow-md shadow-red-600 overflow-hidden'>
+    <div className='relative w-full h-[60%] rounded-xl shadow-md shadow-red-600 overflow-hidden'>
       <div style={{
         backgroundColor: 'rgb(0, 0, 0, .5)',
 
