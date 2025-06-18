@@ -46,7 +46,7 @@ const Projects = () => {
 
       {/* main content */}
       <div className="relative h-full w-full flex flex-col px-10">
-        <div className="h-[25%] px-2">
+        <div className="h-[25%] px-2 lg:absolute lg:w-[45%] lg:right-10 lg:top-15 z-20">
           <h2 className="text-4xl md:text-6xl font-bold tracking-wide mb-6 text-white z-10 text-center">
             <RedWord text="My" /> Projects
           </h2>
@@ -57,10 +57,10 @@ const Projects = () => {
             <RedWord text="learning" />, and my proof.
           </p>
         </div>
-        <div className="w-full h-1/2 center">
+        <div className="w-full h-1/2 center lg:top lg:absolute lg:w-[45%] lg:h-full">
           <ProjectCard />
         </div>
-        <div className="w-full h-1/2">
+        <div className="w-full h-1/2 lg:absolute lg:right-0 lg:bottom-0 lg:w-[45%]">
           <ProjectSlider />
         </div>
       </div>

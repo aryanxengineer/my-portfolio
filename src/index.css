@@ -21,6 +21,12 @@ body {
     align-items: center;
 }
 
+.top{
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+
 .red-letter::first-letter {
     color: red;
 }
