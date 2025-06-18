@@ -19,7 +19,7 @@ const ProjectSlider = () => {
           key={index}
           onMouseEnter={() => setActiveIndex(index)}
           className={`
-            h-52 rounded-2xl shadow-xs overflow-hidden shadow-red-600 transition-all duration-300 ease-in-out
+            h-32 lg:h-52 rounded-2xl shadow-xs overflow-hidden shadow-red-600 transition-all duration-300 ease-in-out
             ${activeIndex === index ? "w-64" : "w-20"}
             cursor-pointer
           `}

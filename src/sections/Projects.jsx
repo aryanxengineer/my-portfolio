@@ -57,10 +57,10 @@ const Projects = () => {
             <RedWord text="learning" />, and my proof.
           </p>
         </div>
-        <div className="w-full h-1/2 center lg:top lg:absolute lg:w-[45%] lg:h-full">
+        <div className="w-full h-1/2 center mt-3 lg:top lg:absolute lg:w-[45%] lg:h-full">
           <ProjectCard />
         </div>
-        <div className="w-full h-1/2 lg:absolute lg:right-0 lg:bottom-0 lg:w-[45%]">
+        <div className="w-full h-1/4 lg:absolute lg:z-20 lg:right-0 lg:bottom-0 lg:w-[45%]">
           <ProjectSlider />
         </div>
       </div>
