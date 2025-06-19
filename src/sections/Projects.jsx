@@ -3,6 +3,7 @@ import ProjectCard from "../components/ProjectCard";
 import { gsap } from "gsap";
 import ProjectSlider from "../components/ProjectSlider";
 import RedWord from "../components/RedWord";
+import InteractiveBubbles from "../components/InteractiveBubbles";
 
 const blobClasses =
   "absolute pointer-events-none blur-2xl rounded-full red-blob";
@@ -34,6 +35,7 @@ const Projects = () => {
       ref={bgRef}
       className="h-screen w-full bg-black relative flex items-center justify-center"
     >
+      <InteractiveBubbles />
       <div
         className={`w-40 h-40 bg-red-600 opacity-20 top-10 left-10 ${blobClasses}`}
       />
