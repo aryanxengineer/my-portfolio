@@ -1,48 +1,63 @@
-import {
-  FaHtml5,
-  FaCss3Alt,
-  FaJs,
-  FaReact,
-  FaNodeJs,
-  FaGitAlt,
-} from "react-icons/fa";
-import { SiMongodb, SiTailwindcss, SiPostman } from "react-icons/si";
-import SkillsLayer from "../layers/SkillsLayer";
-import RedWord from "../components/RedWord";
-
-const skills = [
-  { name: "HTML", icon: <FaHtml5 className="text-orange-500" /> },
-  { name: "CSS", icon: <FaCss3Alt className="text-blue-500" /> },
-  { name: "JavaScript", icon: <FaJs className="text-yellow-400" /> },
-  { name: "React", icon: <FaReact className="text-cyan-400" /> },
-  { name: "TailwindCSS", icon: <SiTailwindcss className="text-blue-300" /> },
-  { name: "Node.js", icon: <FaNodeJs className="text-green-500" /> },
-  { name: "MongoDB", icon: <SiMongodb className="text-green-600" /> },
-  { name: "Git", icon: <FaGitAlt className="text-red-500" /> },
-  { name: "Postman", icon: <SiPostman className="text-orange-400" /> },
-];
+import { useState } from "react";
+import skills from "../data/skillsData";
+import SkillCircle from "../components/SkillCircle";
+import { AnimatePresence, motion } from "framer-motion";
+import BubbleBackground from '../components/BubbleBackground'
 
 const Skills = () => {
+  const [showAll, setShowAll] = useState(false);
+  const visibleSkills = showAll ? skills : skills.slice(0, 12); 
+
+ const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        delay: i * 0.05,
+        ease: "easeInOut",
+      },
+    }),
+    exit: { opacity: 0, y: 30, transition: { duration: 0.3 } },
+  };
+
   return (
-    <section className="relative w-full h-screen px-8 py-10 bg-black text-white">
-      <SkillsLayer />
-      <div className="w-full">
-        <h2 className="text-4xl md:text-6xl font-bold tracking-wide mb-6 text-white z-10 text-center">
-          Tech <RedWord text="Stack" />
-        </h2>
+    <div className="relative min-h-screen bg-black py-16 px-4 text-center">
+      <BubbleBackground />
+      <h2 className="text-3xl sm:text-4xl font-bold text-white mb-10">
+        My Skills
+      </h2>
+
+      <div className="flex flex-wrap justify-center gap-6 sm:gap-8">
+        <AnimatePresence>
+          {visibleSkills.map((skill, index) => (
+            <motion.div
+              key={skill.label}
+              custom={index}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              variants={itemVariants}
+            >
+              <SkillCircle {...skill} />
+            </motion.div>
+          ))}
+        </AnimatePresence>
       </div>
-      <div className="w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-        {skills.map((skill, idx) => (
-          <div
-            key={idx}
-            className="flex flex-col items-center gap-2 bg-gray-800 rounded-xl p-4 hover:scale-105 transition-transform duration-300 shadow-lg"
-          >
-            <div className="text-4xl">{skill.icon}</div>
-            <p className="text-sm font-medium">{skill.name}</p>
-          </div>
-        ))}
-      </div>
-    </section>
+
+      <motion.button
+        onClick={() => setShowAll(!showAll)}
+        whileHover={{ scale: 1.01 }}
+        whileTap={{ scale: 0.97 }}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4, ease: "easeOut" }}
+        className="mt-10 px-6 py-2 rounded-md border-2 border-red-600 text-white font-semibold text-sm sm:text-xs transition"
+      >
+        {showAll ? "Show Less" : "Show More"}
+      </motion.button>
+    </div>
   );
 };
 
