@@ -2,6 +2,7 @@ import { motion, useAnimation, useInView } from "framer-motion";
 import { useEffect, useRef } from "react";
 import BubbleBackground from "../components/BubbleBackground";
 import RedWord from "../components/RedWord";
+import BigButton from "../components/BigButton";
 
 const About = () => {
   const sectionRef = useRef(null);
@@ -56,15 +57,21 @@ const About = () => {
         animate={controls}
         className="max-w-3xl text-center text-base sm:text-lg md:text-xl leading-relaxed text-gray-300 z-10"
       >
-        I'm <RedWord text="Aryan Yadav" /> — a futuristic full-stack developer on a mission to
-        build fast, scalable, and intelligent systems. From clean UI animations to
-        enterprise-level backend logic, I love turning ideas into real,
-        high-performance web experiences.
+        I'm <RedWord text="Aryan Yadav" /> — a futuristic full-stack developer
+        on a mission to build fast, scalable, and intelligent systems. From
+        clean UI animations to enterprise-level backend logic, I love turning
+        ideas into real, high-performance web experiences.
         <br />
-        <br />
-        I build with vision — scalable, smart, and always a step ahead of the{" "}
-        <RedWord text="Learning curve" />, I don’t just code — I architect the future.
+        <br />I build with vision — scalable, smart, and always a step ahead of
+        the <RedWord text="Learning curve" />, I don’t just code — I architect
+        the future.
       </motion.p>
+
+      <div className="flex gap-5 mt-10">
+        <button className="w-54 py-3 text-sm font-semibold rounded border-2 border-red-600 cursor-pointer">
+          Download <RedWord text="cv" />
+        </button>
+      </div>
     </section>
   );
 };

@@ -33,7 +33,7 @@ const Projects = () => {
   return (
     <div
       ref={bgRef}
-      className="h-screen w-full bg-black relative flex items-center justify-center"
+      className="h-screen w-full bg-black relative flex items-center justify-center overflow-hidden"
     >
       <InteractiveBubbles />
       <div
@@ -47,8 +47,8 @@ const Projects = () => {
       />
 
       {/* main content */}
-      <div className="relative h-full w-full flex flex-col px-10">
-        <div className="h-[25%] px-2 lg:absolute lg:w-[45%] lg:right-10 lg:top-15 z-20">
+      <div className="relative h-full w-full flex flex-col px-9">
+        <div className="h-[25%] px-2 lg:absolute lg:w-[45%] lg:right-10 lg:top-15 z-20 mb-18">
           <h2 className="text-4xl md:text-6xl font-bold tracking-wide mb-6 text-white z-10 text-center">
             <RedWord text="My" /> Projects
           </h2>
@@ -59,10 +59,10 @@ const Projects = () => {
             <RedWord text="learning" />, and my proof.
           </p>
         </div>
-        <div className="w-full h-1/2 center mt-3 lg:top lg:absolute lg:w-[45%] lg:h-full">
+        <div className="w-full h-[40%] center my-3 lg:top lg:absolute lg:w-[45%] lg:h-full">
           <ProjectCard />
         </div>
-        <div className="w-full h-1/4 lg:absolute lg:z-20 lg:right-0 lg:bottom-0 lg:w-[45%]">
+        <div className="w-full h-[35%] lg:absolute lg:z-20 lg:right-0 lg:bottom-18 lg:w-[45%]">
           <ProjectSlider />
         </div>
       </div>
