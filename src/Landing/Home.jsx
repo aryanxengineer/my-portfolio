@@ -3,6 +3,7 @@ import About from '../sections/About'
 import Projects from '../sections/Projects';
 import Skills from '../sections/Skills';
 import PortfolioForm from '../sections/PortfolioForm';
+import Footer from '../sections/Footer';
 
 
 const Home = () => {
@@ -13,6 +14,7 @@ const Home = () => {
       <Projects />
       <Skills />
       <PortfolioForm />
+      <Footer />
     </div>
   );
 };
